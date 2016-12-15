@@ -59,9 +59,9 @@ Some of the most fundamental usages of PaddlePaddle are demonstrated:
 -  The second part describes learning algorithm. It defines in what ways adjustments are made to model parameters. PaddlePaddle provides a rich set of optimizers, but a simple momentum-based optimizer will suffice here, and it processes 12 data points each time.
 
 -  Finally, the network configuration. It usually is as simple as "stacking" layers. Three kinds of layers are used in this configuration:
-	-  **Data Layer**: a network always starts with one or more data layers. They provide input data to the rest of the network. In this problem, two data layers are used respectively for :math:`X` and :math:`Y`.
-	-  **FC Layer**: FC layer is short for Fully Connected Layer, which connects all the input units to current layer and does the actual computation specified as activation function. Computation layers like this are the fundamental building blocks of a deeper model.
-	-  **Cost Layer**: in training phase, cost layers are usually the last layers of the network. They measure the performance of the current model and provide guidances to adjust parameters.
+	-  :code:`Data Layer`: a network always starts with one or more data layers. They provide input data to the rest of the network. In this problem, two data layers are used respectively for :math:`X` and :math:`Y`.
+	-  :code:`FC Layer`: FC layer is short for Fully Connected Layer, which connects all the input units to current layer and does the actual computation specified as activation function. Computation layers like this are the fundamental building blocks of a deeper model.
+	-  :code:`Cost Layer`: in training phase, cost layers are usually the last layers of the network. They measure the performance of the current model and provide guidances to adjust parameters.
 
 Now that everything is ready, you can train the network with a simple command line call:
 
