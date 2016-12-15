@@ -81,7 +81,6 @@ In PaddlePaddle, training is just to get a collection of model parameters, which
     .. code-block:: python
 
         import numpy as np
-        import os
 
         def load(file_name):
             with open(file_name, 'rb') as f:
