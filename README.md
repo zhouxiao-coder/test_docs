@@ -6,7 +6,7 @@ Let's start with a classic learning problem - `simple linear regression <https:/
 Problem Background
 ------------------
 
-Suppose there are `n` observed data points :math:`t=1` :math:`{(x_i, y_i), i=1,..., n}` of variable :math:`X` and :math:`Y`, and their relation can be characterized as :math:`y_i = wx_i + b`. The goal is to estimate :math:`w` and :math:`b` based on these observations. 
+Suppose there are `n` observed data points :math:`{(x_i, y_i), i=1,..., n}` of variable :math:`X` and :math:`Y`, and their relation can be characterized as :math:`y_i = wx_i + b`. The goal is to estimate :math:`w` and :math:`b` based on these observations. 
 
 Prepare the Training Data
 -----------------
