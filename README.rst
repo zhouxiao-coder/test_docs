@@ -54,14 +54,12 @@ To recover this relationship between :math:`X` and :math:`Y`, we use a neural ne
 
 Some of the most fundamental usages of PaddlePaddle are demonstrated:
 
--  The first part shows how to feed data into PaddlePaddle. In general cases, PaddlePaddle reads raw data from a list of files, and then do some user-defined process to get real input. In this case, we only need to create a placeholder file since we are generating synthetic data on the fly.
-
--  The second part describes learning algorithm. It defines in what ways adjustments are made to model parameters. PaddlePaddle provides a rich set of optimizers, but a simple momentum-based optimizer will suffice here, and it processes 12 data points each time.
-
--  Finally, the network configuration. It usually is as simple as "stacking" layers. Three kinds of layers are used in this configuration:
-	-  :code:`Data Layer`: a network always starts with one or more data layers. They provide input data to the rest of the network. In this problem, two data layers are used respectively for :math:`X` and :math:`Y`.
-	-  :code:`FC Layer`: FC layer is short for Fully Connected Layer, which connects all the input units to current layer and does the actual computation specified as activation function. Computation layers like this are the fundamental building blocks of a deeper model.
-	-  :code:`Cost Layer`: in training phase, cost layers are usually the last layers of the network. They measure the performance of the current model and provide guidances to adjust parameters.
+- The first part shows how to feed data into PaddlePaddle. In general cases, PaddlePaddle reads raw data from a list of files, and then do some user-defined process to get real input. In this case, we only need to create a placeholder file since we are generating synthetic data on the fly.
+- The second part describes learning algorithm. It defines in what ways adjustments are made to model parameters. PaddlePaddle provides a rich set of optimizers, but a simple momentum-based optimizer will suffice here, and it processes 12 data points each time.
+- Finally, the network configuration. It usually is as simple as "stacking" layers. Three kinds of layers are used in this configuration:
+	- :code:`Data Layer`: a network always starts with one or more data layers. They provide input data to the rest of the network. In this problem, two data layers are used respectively for :math:`X` and :math:`Y`.
+	- :code:`FC Layer`: FC layer is short for Fully Connected Layer, which connects all the input units to current layer and does the actual computation specified as activation function. Computation layers like this are the fundamental building blocks of a deeper model.
+	- :code:`Cost Layer`: in training phase, cost layers are usually the last layers of the network. They measure the performance of the current model and provide guidances to adjust parameters.
 
 Now that everything is ready, you can train the network with a simple command line call:
 
@@ -70,7 +68,7 @@ Now that everything is ready, you can train the network with a simple command li
         paddle train --config=trainer_config.py --save_dir=./output --num_passes=30
  
 
-This means that PaddlePaddle will train this network on the synthetic dataset for 30 passes, and save all the models under path ``./output``. You will see from the messages printed out during training phase that the model cost is decreasing as time goes by, which indicates we are getting a closer guess.
+This means that PaddlePaddle will train this network on the synthetic dataset for 30 passes, and save all the models under path :code:`./output`. You will see from the messages printed out during training phase that the model cost is decreasing as time goes by, which indicates we are getting a closer guess.
 
 
 Evaluate the Model
@@ -78,7 +76,7 @@ Evaluate the Model
 
 Usually, a different dataset that left out during training phase should be used to evaluate the models. However, we are lucky enough to know the real answer: :math:`w=2, b=0.3`, thus a better option is to check out model parameters directly.
 
-In PaddlePaddle, training is just to get a collection of model parameters, which are :math:`w` and :math:`b` in this case. Each parameter is saved in an individual file in the popular ``numpy`` array format. Here is the code that reads parameters from the last pass.
+In PaddlePaddle, training is just to get a collection of model parameters, which are :math:`w` and :math:`b` in this case. Each parameter is saved in an individual file in the popular :code:`numpy` array format. Here is the code that reads parameters from the last pass.
 
     .. code-block:: python
 
